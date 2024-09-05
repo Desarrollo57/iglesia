@@ -4,10 +4,12 @@
     padding: 0;
     font-size: 20px;
 }
+/*paleta de colores https://colorhunt.co/palette/f9dbba5b99c21a48701f316f*/
 /*---------- menú superior ----------*/
 header{
     display: flex;
     justify-content: center;
+    z-index: 100;
 }
 .contenedorMenuHorizontal{
     position: absolute;
@@ -20,7 +22,7 @@ nav{
     max-width: 900px;
     margin: auto;
     background-color: #333;
-    margin-top: 50px;
+    /*margin-top: 50px;*/
 }
 .menuHorizontal{
     list-style: none;
@@ -34,7 +36,7 @@ nav{
     text-decoration: none;
 }
 .menuHorizontal li:hover{
-    background-color: rgb(233, 175, 15);
+    background-color: #5B99C2;
 }
 
 .menuVertical{
@@ -48,7 +50,7 @@ nav{
     display: block;
 }
 .menuVertical li:hover{
-    background-color: rgb(233, 175, 15);
+    background-color: #5B99C2;
 }
 .menuVertical li a{
     display: block;

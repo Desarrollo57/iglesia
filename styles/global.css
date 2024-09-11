@@ -9,10 +9,10 @@
 header{
     display: flex;
     justify-content: center;
-    z-index: 100;
+    /*z-index: 100;*/
 }
 .contenedorMenuHorizontal{
-    position: absolute;
+    position: fixed;
     background: rgba(0, 0 ,0, .5);/*Efecto de transparencia para el menu principal*/
     backdrop-filter: blur(3px);
     border-radius: 5px;
@@ -22,7 +22,6 @@ nav{
     max-width: 900px;
     margin: auto;
     background-color: #333;
-    /*margin-top: 50px;*/
 }
 .menuHorizontal{
     list-style: none;
@@ -38,13 +37,13 @@ nav{
 .menuHorizontal li:hover{
     background-color: #5B99C2;
 }
-
 .menuVertical{
     position: absolute;
     display: none;
     list-style: none;
     width: 200px;
-    background-color: #333;
+    background: rgba(0, 0 ,0, .5);/*Efecto de transparencia para el menu principal*/
+    border-radius: 5px;
 }
 .menuHorizontal li:hover .menuVertical{
     display: block;
@@ -57,6 +56,70 @@ nav{
     color: white;
     padding: 15px 15px 15px 20px;
     text-decoration: none;
+}
+.abrirMenu,
+.cerrarMenu{
+    display: none;
+}
+/*-----------------------Menú hamburguesa-----------------------*/
+@media screen and (max-width: 550px){
+    .abrirMenu,
+    .cerrarMenu{
+        display: block;
+        border: 0;
+        font-size: 1.25rem;
+        background-color: transparent;
+        color: #ECDFCC;
+        cursor: pointer;
+    }
+    .abrirMenu img{
+        position: fixed;
+        width: 30px;
+    }
+    .cerrarMenu img{
+        width: 30px;
+    }
+    .contenedorMenuHorizontal{
+        backdrop-filter: none;
+        margin-top: 0;
+        width: 42%;
+        opacity: 0;
+        visibility: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+        gap: 1rem;
+        position: absolute;
+        top: 0;
+        right: 0;
+        /*bottom: 0;*/
+        background-color: #5B99C2;
+        padding: 1rem 1rem 0 0;
+        box-shadow: 0 0 0 100vmax rgba(0, 0, 0, -5);
+        z-index: 100;
+    }
+    .contenedorMenuHorizontal.visible{
+        position: fixed;
+        opacity: 1;
+        visibility: visible;
+    }
+    .menuHorizontal{
+        flex-direction: column;
+        align-items: end;
+    }
+    /*
+    .menuVertical li a{
+        display: block;
+        color: white;
+        padding: 15px 15px 15px 20px;
+        text-decoration: none;
+    }*/
+}
+/*-----------------------Estilos movile-----------------------*/
+@media screen and (max-width: 550px){
+    .banner{
+
+    }
 }
 /*-----------------------Footer-----------------------*/
 .btn-wsp{

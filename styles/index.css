@@ -1,15 +1,16 @@
 main{
     position: relative;
-    /*margin-top: 7vh;*/
     z-index: -1;
-}
-.banner{
-    width: 100vw;
+    background-image: url(../img/banner.png);
+    padding-top: 26%;
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: contain;
 }
 .principal{
     background-color: #fefefe;
     padding: 3em 0;
-    width: 940px;
+    width: 90vw;
     margin: 0 auto;
 }
 .titulo-principal{
@@ -41,6 +42,6 @@ main{
     text-align: center;
 }
 .mapa-contenido{
-    width: 940px;
+    width: 97vw;
     margin: 0 auto;
 }

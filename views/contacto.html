@@ -4,12 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles/global.css">
+    <link rel="stylesheet" href="../styles/contacto.css">
     <title>Contacto Filadelfia</title>
 </head>
 <body>
     <header>
-        <!-- MENÚ SUPERIOR -->
-        <nav class="contenedorMenuHorizontal">
+        <button class="abrirMenu" id="abrir"><img src="../img/icons/abrir.svg" alt="abrir"></button>
+        <nav class="contenedorMenuHorizontal" id="nav">
+            <button class="cerrarMenu" id="cerrar"><img src="../img/icons/cerrar.svg" alt="cerrar"></button>
             <ul class="menuHorizontal">
                 <li><a href="../index.html">Iglesia</a>
                     <ul class="menuVertical">
@@ -33,10 +35,64 @@
         </nav>
     </header>
     <main>
-        <img src="../img/contacto.svg" alt="">
+        <form id="formularioUsuario"></form>
+            <label for="nombreapellido">Nombre</label>
+            <input type="text" id="nombreapellido" class="imput-padron" required>
+            
+            <label for="correoelectronico">Correo Electronico</label>
+            <input type="email" id="correoelectronico" class="imput-padron" required placeholder="email@dominio.com">
+            
+            <label for="telefono">Telefono</label>
+            <input type="" id="telefono" class="imput-padron" required placeholder="+57 xxxxxxxxxx">
+
+            <label for="mensaje">¿Cuentenos sus preocupaciones?</label>
+            <textarea id="mensaje" cols="70" rows="10" class="imput-padron" required></textarea>
+            <fieldset>
+                <legend>¿Como le gustaria que lo contactemos?</legend>
+
+                <label for="radio-email"><input type="radio" name="contacto" value="email" id="radio-email">Email</label>
+                
+                <label for="radio-telefono"><input type="radio" name="contacto" value="telefono" id="radio-telefono">Telefono</label>
+                
+                <label for="radio-whatsapp"><input type="radio" name="contacto" value="whatsapp" id="radio-whatsapp" checked>WhatsApp</label>
+            </fieldset>
+            <fieldset>
+                <legend>¿En cual horario prefiere ser atendido?</legend>
+                <select id="FranjaHoraria">
+                    <option>Mañana</option>
+                    <option>Tarde</option>
+                    <option>Noche</option>
+                </select>
+            </fieldset>
+            <label class="checkbox"><input type="checkbox" >¿Le gustaría recibir información de eventos proximos?</label>
+            <input type="submit" value="Enviar Formulario" class="enviar" onclick="captura()">
+        </form>
+        <table class="tabla">
+            <thead>
+                <tr>
+                    <th>Dia</th>
+                    <th>Hora</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Jueves</td>
+                    <td>08h - 16h</td>
+                </tr>
+                <tr>
+                    <td>Sabados</td>
+                    <td>08h - 16h</td>
+                </tr>
+                <tr>
+                    <td>Domingos</td>
+                    <td>08h - 16h</td>
+                </tr>
+            </tbody>
+        </table>
     </main>
     <footer>
 
     </footer>
+    <script src="../scripts/menu.js"></script>
 </body>
 </html>
